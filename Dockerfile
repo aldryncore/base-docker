@@ -1,9 +1,11 @@
-FROM ubuntu:quantal
+FROM ubuntu:14.04
 MAINTAINER aldryn "support@aldryn.com"
 
-RUN mkdir /tmp/build
-ADD ./stack/ /tmp/build
-RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive cd /tmp/build && ./cedar.sh
-RUN rm -rf /tmp/build
+# workaround for a bug in hub.docker.com
+RUN ln -s -f /bin/true /usr/bin/chfn
 
-ENV LC_ALL en_US.UTF-8
+RUN mkdir /build
+ADD ./stack/ /build
+RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive /build/prepare
+ENV PYTHONUNBUFFERED 1
+ENV VERSION 2.0
