@@ -11,6 +11,11 @@ additions to the default packages installed in cedarish:
 Changelog
 =========
 
+2.1 (2014-08-27)
+----------------
+
+* adds libncurses5-dev
+
 2.0 (2014-08-06)
 ----------------
 
