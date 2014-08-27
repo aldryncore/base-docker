@@ -8,4 +8,5 @@ RUN mkdir /build
 ADD ./stack/ /build
 RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive /build/prepare
 ENV PYTHONUNBUFFERED 1
+ENV PIP_REQUIRE_VIRTUALENV false
 ENV VERSION 2.0
