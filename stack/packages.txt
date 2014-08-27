@@ -22,6 +22,7 @@ libmagickcore-dev
 libmagickwand-dev
 libmcrypt-dev
 libmysqlclient-dev
+libncurses5-dev
 libpq-dev
 libsqlite3-dev
 libssl-dev
