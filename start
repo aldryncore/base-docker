@@ -1,0 +1,5 @@
+#!/bin/bash
+# TODO: move this into aldryn/base
+cd /app
+command="$(ruby -e "require 'yaml';puts YAML.load_file('Procfile')['$1']")"
+$(eval echo ${command})

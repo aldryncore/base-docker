@@ -9,4 +9,8 @@ ADD ./stack/ /build
 RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive /build/prepare
 ENV PYTHONUNBUFFERED 1
 ENV PIP_REQUIRE_VIRTUALENV false
-ENV VERSION 2.0
+ADD start /usr/local/bin/start
+RUN chmod +x /usr/local/bin/start
+RUN ln -nsf /usr/local/bin/start /start
+ADD Procfile /app/Procfile
+CMD start web
