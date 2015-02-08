@@ -12,10 +12,14 @@ imagemagick
 iputils-tracepath
 libcurl4-openssl-dev
 libevent-dev
+libffi6
+libffi-dev
 libgeoip-dev
 libglib2.0-dev
 libjpeg-dev
 libjpeg62
+libpcre3
+libpcre3-dev
 libpng12-0
 libpng12-dev
 libmagickcore-dev
@@ -40,6 +44,10 @@ postgresql-server-dev-9.3
 python-dev
 ruby-dev
 socat
+supervisor
 sqlite3
 telnet
+unzip
+wget
 zlib1g-dev
+npm

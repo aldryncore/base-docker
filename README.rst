@@ -11,6 +11,16 @@ additions to the default packages installed in cedarish:
 Changelog
 =========
 
+2.3 (2015-03-08)
+----------------
+
+* libffi-dev for pyOpenSSL/cryptography
+* libpcre
+* supervisor
+* unzip
+* wget
+* node/npm
+
 2.2 (2014-11-18)
 ----------------
 

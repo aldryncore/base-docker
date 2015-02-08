@@ -20,3 +20,7 @@ curl --silent --show-error --retry 5 https://bootstrap.pypa.io/get-pip.py | sudo
 # cleanup
 rm -rf /var/lib/apt/lists/*
 apt-get clean
+
+# make node available with its default name
+ln -s /usr/bin/nodejs /usr/bin/node
+
