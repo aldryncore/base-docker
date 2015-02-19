@@ -2,6 +2,8 @@ autoconf
 bind9-host
 bison
 build-essential
+bzr
+ca-certificates
 curl
 daemontools
 dnsutils
@@ -10,6 +12,7 @@ geoip-dbg
 git
 imagemagick
 iputils-tracepath
+libbz2-dev
 libcurl4-openssl-dev
 libevent-dev
 libffi6
@@ -28,11 +31,13 @@ libmcrypt-dev
 libmysqlclient-dev
 libncurses5-dev
 libpq-dev
+libreadline-dev
 libsqlite3-dev
 libssl-dev
 libssl0.9.8
 libxml2-dev
 libxslt-dev
+libyaml-dev
 mercurial
 mysql-client
 netcat-openbsd
@@ -44,6 +49,7 @@ postgresql-server-dev-9.3
 python-dev
 ruby-dev
 socat
+subversion
 supervisor
 sqlite3
 telnet
