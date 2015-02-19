@@ -1,6 +1,10 @@
 FROM ubuntu:14.04
 MAINTAINER aldryn "support@aldryn.com"
 
+# http://bugs.python.org/issue19846
+# > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
+ENV LANG C.UTF-8
+
 # workaround for a bug in hub.docker.com
 RUN ln -s -f /bin/true /usr/bin/chfn
 
