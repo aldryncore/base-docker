@@ -14,6 +14,21 @@ additions to the default packages installed in cedarish:
 
 ## Changelog
 
+### 2.6 (2015-07-14)
+
+* newer ubuntu packages
+* less layers
+* run-forest-run command
+
+### 2.5 (2015-03-03)
+
+* add forego, a foreman clone in go
+
+### 2.4 (2015-02-19)
+
+* extra packages also installed on python:latest
+* python encoding fixes
+
 ### 2.3 (2015-03-08)
 
 * libffi-dev for pyOpenSSL/cryptography
