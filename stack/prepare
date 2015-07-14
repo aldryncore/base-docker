@@ -3,11 +3,14 @@
 # Prepares the "stack" to run apps and the environment to run buildpacks
 #
 
+SCRIPT=$(readlink -f "$0")
+BASEDIR=$(dirname "$SCRIPT")
+
 #
 # SYSTEM PACKAGES
 #
 apt-get update
-xargs apt-get install -y --force-yes < /build/packages.txt
+xargs apt-get install -y --force-yes < /stack/packages.txt
 apt-get clean
 
 #
@@ -28,3 +31,10 @@ apt-get clean
 # make node available with its default name
 ln -s /usr/bin/nodejs /usr/bin/node
 
+# workaround for a bug in hub.docker.com
+ln -s -f /bin/true /usr/bin/chfn
+
+# copy our custom commands
+cp ${BASEDIR}/start /usr/local/bin/start
+ln -nsf /usr/local/bin/start /start
+cp ${BASEDIR}/run-forest-run /usr/local/bin/run-forest-run
