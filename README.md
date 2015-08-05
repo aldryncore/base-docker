@@ -4,7 +4,7 @@
 
 docker base image for aldryn (python) applications.
 
-simplified  version of https://github.com/progrium/cedarish
+simplified  version of https://github.com/progrium/cedarish but based on the official python image
 
 additions to the default packages installed in cedarish:
 
@@ -13,6 +13,14 @@ additions to the default packages installed in cedarish:
 
 
 ## Changelog
+
+### 3.0 (2015-08-XXXXX)
+
+* switch to debian as base (using the official python:2.7.10 docker image)
+* a default virtualenv with --no-site-packages (at /virtualenv) that is activated
+* pipsi
+* no more globally installed python packages (mercurial, bzr are now installed with pipsi)
+
 
 ### 2.6 (2015-07-14)
 

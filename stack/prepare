@@ -2,6 +2,8 @@
 #
 # Prepares the "stack" to run apps and the environment to run buildpacks
 #
+set -x
+set -e
 
 SCRIPT=$(readlink -f "$0")
 BASEDIR=$(dirname "$SCRIPT")
@@ -10,15 +12,23 @@ BASEDIR=$(dirname "$SCRIPT")
 # SYSTEM PACKAGES
 #
 apt-get update
-xargs apt-get install -y --force-yes < /stack/packages.txt
+# IMPORTANT: packages.txt must NOT contain anything that depends on python
+xargs apt-get install -y --force-yes --no-install-recommends < /stack/packages.txt
 apt-get clean
+
+#
+# pipsi for simple installation of python commands
+#
+# NOTE: PATH=/root/.local/bin:$PATH must be set in the Dockerfile
+curl --silent --retry 5 https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python
 
 #
 # MISC
 #
+pipsi install mercurial
+pipsi install pip-tools
+pipsi install supervisor
 
-# install latest pip
-curl --silent --show-error --retry 5 https://bootstrap.pypa.io/get-pip.py | sudo python2.7
 
 # install forego (a foreman clone in go)
 curl --silent --show-error --retry 5 -o /usr/local/bin/forego https://godist.herokuapp.com/projects/ddollar/forego/releases/current/linux-amd64/forego
@@ -29,7 +39,7 @@ rm -rf /var/lib/apt/lists/*
 apt-get clean
 
 # make node available with its default name
-ln -s /usr/bin/nodejs /usr/bin/node
+# ln -s /usr/bin/nodejs /usr/bin/node
 
 # workaround for a bug in hub.docker.com
 ln -s -f /bin/true /usr/bin/chfn
@@ -38,3 +48,7 @@ ln -s -f /bin/true /usr/bin/chfn
 cp ${BASEDIR}/start /usr/local/bin/start
 ln -nsf /usr/local/bin/start /start
 cp ${BASEDIR}/run-forest-run /usr/local/bin/run-forest-run
+
+# default virtualenv
+# NOTE: PATH=/virtualenv/bin:$PATH must be set in the Dockerfile
+virtualenv --no-site-packages /virtualenv

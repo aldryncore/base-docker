@@ -1,5 +1,5 @@
 #!/bin/bash
-# TODO: move this into aldryn/base
+# TODO: replace with something that does not need ruby
 cd /app
 command="$(ruby -e "require 'yaml';puts YAML.load_file('Procfile')['$1']")"
 $(eval echo ${command})
