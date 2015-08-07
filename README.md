@@ -6,7 +6,7 @@ docker base image for aldryn (python) applications.
 
 simplified  version of https://github.com/progrium/cedarish but based on the official python image
 
-additions to the default packages installed in cedarish:
+some of the additions to the default packages installed in cedarish:
 
 * latest pip
 * geoip C libraries
@@ -20,6 +20,7 @@ additions to the default packages installed in cedarish:
 * a default virtualenv with --no-site-packages (at /virtualenv) that is activated
 * pipsi
 * no more globally installed python packages (mercurial, bzr are now installed with pipsi)
+* pip-tools
 
 
 ### 2.6 (2015-07-14)
