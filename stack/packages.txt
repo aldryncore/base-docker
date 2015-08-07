@@ -46,5 +46,6 @@ subversion
 sqlite3
 telnet
 unzip
+vim
 wget
 zlib1g-dev
