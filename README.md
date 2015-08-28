@@ -14,13 +14,14 @@ some of the additions to the default packages installed in cedarish:
 
 ## Changelog
 
-### 3.0 (2015-08-XXXXX)
+### 3.0 (2015-08-28)
 
 * switch to debian as base (using the official python:2.7.10 docker image)
 * a default virtualenv with --no-site-packages (at /virtualenv) that is activated
 * pipsi
 * no more globally installed python packages (mercurial, bzr are now installed with pipsi)
 * pip-tools
+* node/npm not installed anymore
 
 
 ### 2.6 (2015-07-14)
