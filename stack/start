@@ -1,3 +1,0 @@
-#!/bin/bash
-cd /app
-exec forego start -f Procfile $1
