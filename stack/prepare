@@ -28,9 +28,12 @@ curl --silent --retry 5 https://raw.githubusercontent.com/mitsuhiko/pipsi/master
 pipsi install mercurial
 pipsi install pip-tools
 pipsi install supervisor
+pipsi install start
 
 
 # install forego (a foreman clone in go)
+# TODO: remove once not needed anymore. Currently aldryn-django uses forego to
+#       launch pagespeed sites with separate nginx and django processes.
 curl --silent --show-error --retry 5 -o /usr/local/bin/forego https://godist.herokuapp.com/projects/ddollar/forego/releases/current/linux-amd64/forego
 chmod u+x /usr/local/bin/forego
 
@@ -44,9 +47,7 @@ apt-get clean
 # workaround for a bug in hub.docker.com
 ln -s -f /bin/true /usr/bin/chfn
 
-# copy our custom commands
-cp ${BASEDIR}/start /usr/local/bin/start
-ln -nsf /usr/local/bin/start /start
+# install custom commands
 cp ${BASEDIR}/run-forest-run /usr/local/bin/run-forest-run
 
 # default virtualenv
