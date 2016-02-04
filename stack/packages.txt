@@ -33,6 +33,7 @@ libssl-dev
 libxml2-dev
 libxslt-dev
 libyaml-dev
+mercurial
 mysql-client
 netcat-openbsd
 openssh-client
