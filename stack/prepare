@@ -12,7 +12,7 @@ BASEDIR=$(dirname "$SCRIPT")
 # SYSTEM PACKAGES
 #
 apt-get update
-xargs apt-get install -y --force-yes --no-install-recommends < /stack/packages.txt
+xargs apt-get install -y --force-yes --no-install-recommends < ${BASEDIR}/packages.txt
 apt-get clean
 
 #
