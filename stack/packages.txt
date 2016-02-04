@@ -1,10 +1,8 @@
-aptitude
 bind9-host
 bison
 build-essential
 ca-certificates
 curl
-daemontools
 dnsutils
 ed
 gcc
@@ -40,9 +38,7 @@ netcat-openbsd
 openssh-client
 openssh-server
 postgresql-client
-ruby
 socat
-subversion
 sqlite3
 telnet
 unzip
