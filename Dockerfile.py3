@@ -10,5 +10,7 @@ RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive /stack/base/install.sh
 
 RUN virtualenv --prompt mypython --no-site-packages /virtualenv
 
+ENTRYPOINT ["/tini", "-g", "--"]
+
 ADD Procfile /app/Procfile
-CMD start web
+CMD ["start", "web"]

@@ -38,14 +38,25 @@ python ${BASEDIR}/get-pipsi.py
 #
 # MISC
 #
+
+# pip-tools: requirements evaluator
 pipsi install https://github.com/aldryncore/pip-tools/archive/1.5.0.1.tar.gz#egg=pip-tools==1.5.0.1 --python=python2
+
+# start: a simple tool to start one process out of a Procfile
 pipsi install start==0.2
 
+# tini: minimal PID 1 init. reaps zombie processes and forwards signals
+# set
+# ENTRYPOINT ["/tini", "--"]
+# in the Dockerfile to make it the default method for starting processes.
+# https://github.com/krallin/tini
+curl -L --show-error --retry 5 -o /tini https://github.com/krallin/tini/releases/download/v0.9.0/tini
+chmod +x /tini
 
 # install forego (a foreman clone in go)
 # TODO: remove once not needed anymore. Currently aldryn-django uses forego to
 #       launch pagespeed sites with separate nginx and django processes.
-curl --silent --show-error --retry 5 -o /usr/local/bin/forego https://godist.herokuapp.com/projects/ddollar/forego/releases/current/linux-amd64/forego
+curl -L --show-error --retry 5 -o /usr/local/bin/forego https://godist.herokuapp.com/projects/ddollar/forego/releases/current/linux-amd64/forego
 chmod u+x /usr/local/bin/forego
 
 # cleanup
