@@ -14,6 +14,16 @@ some of the additions to the default packages installed in cedarish:
 
 ## Changelog
 
+### 3.5 (2016-04-25)
+
+* re-build to pick up latest python base image changes
+
+### 3.4 (2016-03-07)
+
+* build two images: python 2 and python 3
+  (python 3 versions are tagged as py3-x.x)
+* use tini as PID1 (kills zombies)
+
 ### 3.0 (2015-08-28)
 
 * switch to debian as base (using the official python:2.7.10 docker image)
