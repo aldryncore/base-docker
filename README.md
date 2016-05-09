@@ -14,15 +14,23 @@ some of the additions to the default packages installed in cedarish:
 
 ## Changelog
 
+### 3.6 (2016-05-09)
+
+* re-build to pick up latest python base image changes (e.g pip 8.1.1)
+* remove --prompt from virtualenv creation
+
+
 ### 3.5 (2016-04-25)
 
 * re-build to pick up latest python base image changes
+
 
 ### 3.4 (2016-03-07)
 
 * build two images: python 2 and python 3
   (python 3 versions are tagged as py3-x.x)
 * use tini as PID1 (kills zombies)
+
 
 ### 3.0 (2015-08-28)
 
@@ -40,14 +48,17 @@ some of the additions to the default packages installed in cedarish:
 * less layers
 * run-forest-run command
 
+
 ### 2.5 (2015-03-03)
 
 * add forego, a foreman clone in go
+
 
 ### 2.4 (2015-02-19)
 
 * extra packages also installed on python:latest
 * python encoding fixes
+
 
 ### 2.3 (2015-03-08)
 
@@ -57,6 +68,7 @@ some of the additions to the default packages installed in cedarish:
 * unzip
 * wget
 * node/npm
+
 
 ### 2.2 (2014-11-18)
 
