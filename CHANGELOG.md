@@ -1,6 +1,6 @@
 # Changelog
 
-## next (2016-xx-xx)
+## 3.7 (2016-05-09)
 
 * set LC_ALL and LANG env vars to correctly support python3
 * install pipsi and pip-tools with python3 for the python3 version
