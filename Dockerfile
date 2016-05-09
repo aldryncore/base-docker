@@ -3,10 +3,12 @@ FROM python:2.7.11
 ENV PYTHONUNBUFFERED=1\
     PIP_REQUIRE_VIRTUALENV=false\
     PATH=/virtualenv/bin:/root/.local/bin:$PATH\
-    PROCFILE_PATH=/app/Procfile
+    PROCFILE_PATH=/app/Procfile\
+    LC_ALL=C.UTF-8\
+    LANG=C.UTF-8
 
 COPY stack /stack/base
-RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive /stack/base/install.sh
+RUN DEBIAN_FRONTEND=noninteractive /stack/base/install.sh
 
 RUN virtualenv --no-site-packages /virtualenv
 

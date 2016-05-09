@@ -2,7 +2,9 @@
 
 # copied from
 # https://raw.githubusercontent.com/mitsuhiko/pipsi/ad72771136c885b9bdaa965df454f19a9415da26/get-pipsi.py
-# altered to use python2 for pipsi itself because of a bug in click.
+# Altered to use install from github instead of latest from pip.
+# We can switch to using the stock get-pipsi.py when there is a new release:
+# https://github.com/mitsuhiko/pipsi/issues/36
 
 import os
 import sys
@@ -72,11 +74,13 @@ def install_files(venv, bin_dir, install):
         except (OSError, IOError):
             pass
 
-    if call(['virtualenv', '--python=python2', venv]) != 0:
+    if call(['virtualenv', venv]) != 0:
         _cleanup()
         fail('Could not create virtualenv for pipsi :(')
 
-    if call([venv + PIP, 'install', install]) != 0:
+
+    echo('installing pipsi from github...')
+    if call([venv + PIP, 'install', 'https://github.com/mitsuhiko/pipsi/archive/ad72771136c885b9bdaa965df454f19a9415da26.zip']) != 0:
         _cleanup()
         fail('Could not install pipsi :(')
 

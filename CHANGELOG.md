@@ -1,5 +1,12 @@
 # Changelog
 
+## next (2016-xx-xx)
+
+* set LC_ALL and LANG env vars to correctly support python3
+* install pipsi and pip-tools with python3 for the python3 version
+  (fixes problems with not finding wheels)
+
+
 ## 3.6 (2016-05-09)
 
 * re-build to pick up latest python base image changes (e.g pip 8.1.1)
