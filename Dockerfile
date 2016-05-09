@@ -8,7 +8,7 @@ ENV PYTHONUNBUFFERED=1\
 COPY stack /stack/base
 RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive /stack/base/install.sh
 
-RUN virtualenv --prompt mypython --no-site-packages /virtualenv
+RUN virtualenv --no-site-packages /virtualenv
 
 ENTRYPOINT ["/tini", "-g", "--"]
 
