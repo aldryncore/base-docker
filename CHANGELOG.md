@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.11 (2016-05-13)
+
+* remove duplicated call to create new virtualenv
+
+
 ## 3.10 (2016-05-13)
 
 * freeze pip to 8.1.1 also in default virtualenv
