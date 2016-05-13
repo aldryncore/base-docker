@@ -61,8 +61,8 @@ chmod +x /tini
 # install forego (a foreman clone in go)
 # TODO: remove once not needed anymore. Currently aldryn-django uses forego to
 #       launch pagespeed sites with separate nginx and django processes.
-curl -L --show-error --retry 5 -o /usr/local/bin/forego https://godist.herokuapp.com/projects/ddollar/forego/releases/current/linux-amd64/forego
-chmod u+x /usr/local/bin/forego
+curl -L --show-error --retry 5 -o /tmp/forego.deb https://bin.equinox.io/c/ekMN3bCZFUn/forego-stable-linux-amd64.deb
+dpkg -i /tmp/forego.deb
 
 # cleanup
 rm -rf /var/lib/apt/lists/*
