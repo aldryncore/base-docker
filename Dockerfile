@@ -10,8 +10,6 @@ ENV PYTHONUNBUFFERED=1\
 COPY stack /stack/base
 RUN DEBIAN_FRONTEND=noninteractive /stack/base/install.sh
 
-RUN virtualenv --no-site-packages /virtualenv
-
 ENTRYPOINT ["/tini", "-g", "--"]
 
 ADD Procfile /app/Procfile
