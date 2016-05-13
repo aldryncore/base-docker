@@ -16,11 +16,6 @@ BASEDIR=$(dirname "$SCRIPT")
 apt-get update
 xargs apt-get install -y --force-yes --no-install-recommends < ${BASEDIR}/packages.txt
 
-# pip 8.1.2 has made internal changes that break pip-tools < 1.7
-# since pip-tools > 1.7 is not released yet we're freezing pip to 8.1.1
-# also see the last line of this file
-# https://github.com/nvie/pip-tools/issues/358
-pip install pip==8.1.1
 
 if [ $PYTHON_MAJOR_VERSION -eq 3 ]
 then
@@ -53,6 +48,11 @@ python ${BASEDIR}/get-pipsi.py
 #    recognized on pypi and our wheels proxy.
 pipsi install https://github.com/aldryncore/pip-tools/archive/1.5.0.1.tar.gz#egg=pip-tools==1.5.0.1
 
+# pip 8.1.2 has made internal changes that break pip-tools < 1.7
+# since pip-tools > 1.7 is not released yet we're freezing pip to 8.1.1
+# https://github.com/nvie/pip-tools/issues/358
+/root/.local/venvs/pip-tools/bin/pip install pip==8.1.1
+
 # start: a simple tool to start one process out of a Procfile
 pipsi install start==0.2
 
@@ -84,6 +84,3 @@ cp ${BASEDIR}/run-forest-run /usr/local/bin/run-forest-run
 # default virtualenv
 # NOTE: PATH=/virtualenv/bin:$PATH must be set in the Dockerfile
 virtualenv --no-site-packages /virtualenv
-
-# override pip version again
-/virtualenv/bin/pip install pip==8.1.1
