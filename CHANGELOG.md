@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.10 (2016-05-13)
+
+* freeze pip to 8.1.1 also in default virtualenv
+
+
 ## 3.9 (2016-05-13)
 
 * freeze pip to 8.1.1 because of issues with pip-compile
