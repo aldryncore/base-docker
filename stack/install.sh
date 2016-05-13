@@ -16,6 +16,11 @@ BASEDIR=$(dirname "$SCRIPT")
 apt-get update
 xargs apt-get install -y --force-yes --no-install-recommends < ${BASEDIR}/packages.txt
 
+# pip 8.1.2 has made internal changes that break pip-tools < 1.7
+# since pip-tools > 1.7 is not released yet we're freezing pip to 8.1.1
+# https://github.com/nvie/pip-tools/issues/358
+pip install pip==8.1.1
+
 if [ $PYTHON_MAJOR_VERSION -eq 3 ]
 then
     # the official python 3 docker image does not have virtualenv installed
