@@ -1,5 +1,15 @@
 # Changelog
 
+## 3.9 (2016-05-13)
+
+* freeze pip to 8.1.1 because of issues with pip-compile
+
+
+## 3.8 (2016-05-13)
+
+* Update forego install source
+
+
 ## 3.7 (2016-05-09)
 
 * set LC_ALL and LANG env vars to correctly support python3
