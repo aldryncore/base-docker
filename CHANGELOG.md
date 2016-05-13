@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.12 (2016-05-13)
+
+* only use old pip in pipsi venv
+
+
 ## 3.11 (2016-05-13)
 
 * remove duplicated call to create new virtualenv
