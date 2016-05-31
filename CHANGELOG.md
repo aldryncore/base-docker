@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.13 (2016-05-31)
+
+* install gettext
+
+
 ## 3.12 (2016-05-13)
 
 * only use old pip in pipsi venv
