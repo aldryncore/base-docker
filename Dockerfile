@@ -1,10 +1,10 @@
 FROM python:2.7.11
 
-ENV PYTHONUNBUFFERED=1\
-    PIP_REQUIRE_VIRTUALENV=false\
-    PATH=/virtualenv/bin:/root/.local/bin:$PATH\
-    PROCFILE_PATH=/app/Procfile\
-    LC_ALL=C.UTF-8\
+ENV PYTHONUNBUFFERED=1 \
+    PIP_REQUIRE_VIRTUALENV=false \
+    PATH=/virtualenv/bin:/root/.local/bin:$PATH \
+    PROCFILE_PATH=/app/Procfile \
+    LC_ALL=C.UTF-8 \
     LANG=C.UTF-8
 
 COPY stack /stack/base
