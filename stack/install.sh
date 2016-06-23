@@ -70,7 +70,13 @@ chmod +x /tini
 curl -L --show-error --retry 5 -o /tmp/forego.deb https://bin.equinox.io/c/ekMN3bCZFUn/forego-stable-linux-amd64.deb
 dpkg -i /tmp/forego.deb
 
+# install static build of pngout
+curl -L --show-error --retry 5 http://static.jonof.id.au/dl/kenutils/pngout-20150319-linux-static.tar.gz | tar -xzC / pngout-20150319-linux-static/x86_64/pngout-static
+mv /pngout-20150319-linux-static/x86_64/pngout-static /usr/bin/pngout
+rm -rf pngout-20150319-linux-static
+
 # cleanup
+apt-get autoremove -y
 rm -rf /var/lib/apt/lists/*
 rm -rf /tmp/*
 apt-get clean
