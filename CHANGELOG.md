@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.14 (2016-06-23)
+
+* install a range of image optimization utilities (pngout, pngquant, optipng, jpegoptim, gifsicle,...)
+
+
 ## 3.13 (2016-05-31)
 
 * install gettext
