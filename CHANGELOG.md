@@ -1,5 +1,10 @@
 # Changelog
 
+## next
+
+* install geodjango dependencies (binutils libproj-dev gdal-bin postgis)
+
+
 ## 3.14 (2016-06-23)
 
 * install a range of image optimization utilities (pngout, pngquant, optipng, jpegoptim, gifsicle,...)

@@ -1,5 +1,6 @@
 advancecomp
 bind9-host
+binutils
 bison
 build-essential
 ca-certificates
@@ -7,6 +8,7 @@ curl
 dnsutils
 ed
 gcc
+gdal-bin
 geoip-dbg
 gettext
 gifsicle
@@ -31,6 +33,7 @@ libpcre3-dev
 libpng12-0
 libpng12-dev
 libpq-dev
+libproj-dev
 libreadline-dev
 libsqlite3-dev
 libssl-dev
@@ -45,6 +48,7 @@ openssh-server
 optipng
 pngcrush
 pngquant
+postgis
 postgresql-client
 socat
 sqlite3
