@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.16 (2016-08-24)
+
+* install pip-reqs
+
+
 ## 3.15 (2016-07-04)
 
 * install geodjango dependencies (binutils libproj-dev gdal-bin postgis)
