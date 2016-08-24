@@ -53,6 +53,10 @@ pipsi install https://github.com/aldryncore/pip-tools/archive/1.5.0.1.tar.gz#egg
 # https://github.com/nvie/pip-tools/issues/358
 /root/.local/venvs/pip-tools/bin/pip install pip==8.1.1
 
+# pip-reqs: requirements evaluator and client for the wheels proxy remote
+# requirements compilation/resolution API
+pipsi install pip-reqs==0.3
+
 # start: a simple tool to start one process out of a Procfile
 pipsi install start==0.2
 
