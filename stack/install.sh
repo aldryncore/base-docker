@@ -55,7 +55,7 @@ pipsi install https://github.com/aldryncore/pip-tools/archive/1.5.0.1.tar.gz#egg
 
 # pip-reqs: requirements evaluator and client for the wheels proxy remote
 # requirements compilation/resolution API
-pipsi install pip-reqs
+pipsi install pip-reqs==0.3
 
 # start: a simple tool to start one process out of a Procfile
 pipsi install start==0.2
