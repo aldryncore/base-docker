@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.18 (2016-08-24)
+
+* upgrade pip-reqs to v0.5
+
+
 ## 3.17 (2016-08-24)
 
 * install python3 compatible pip-reqs
