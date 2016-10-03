@@ -1,4 +1,4 @@
-FROM python:2.7.11
+FROM python:2.7.12
 
 ENV PYTHONUNBUFFERED=1 \
     PIP_REQUIRE_VIRTUALENV=false \
