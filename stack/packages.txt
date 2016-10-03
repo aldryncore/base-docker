@@ -49,7 +49,7 @@ optipng
 pngcrush
 pngquant
 postgis
-postgresql-client
+postgresql-client-9.6
 socat
 sqlite3
 telnet
