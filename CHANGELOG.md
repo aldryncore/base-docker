@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.19 (2016-10-03)
+
+* upgrade python to the latest minor version (2.7.12 and 3.5.2 respectively)
+* upgrade postgres client libs to from 9.4 to 9.6
+
+
 ## 3.18 (2016-08-24)
 
 * upgrade pip-reqs to v0.5
