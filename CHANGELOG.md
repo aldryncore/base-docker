@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.20 (2016-11-22)
+
+* upgrade system libraries
+
+
 ## 3.19 (2016-10-03)
 
 * upgrade python to the latest minor version (2.7.12 and 3.5.2 respectively)
