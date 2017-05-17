@@ -1,4 +1,4 @@
-FROM python:3.6.0rc1
+FROM python:3.6.1
 
 ENV PYTHONUNBUFFERED=1 \
     PIP_REQUIRE_VIRTUALENV=false \
