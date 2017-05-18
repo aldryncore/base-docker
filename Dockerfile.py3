@@ -1,7 +1,8 @@
-FROM python:3.5.2
+FROM python:3.6.1
 
 ENV PYTHONUNBUFFERED=1 \
     PIP_REQUIRE_VIRTUALENV=false \
+    WHEELS_PLATFORM=aldryn-baseproject-py36 \
     PATH=/virtualenv/bin:/root/.local/bin:$PATH \
     PROCFILE_PATH=/app/Procfile \
     LC_ALL=C.UTF-8 \
