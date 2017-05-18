@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.24 (2017-05-18)
+
+* Upgrade to python 3.6
+* Upgrade system libraries
+* Upgrade pip-tools to 1.9.0
+* Upgrade pip to latest version (9.0.1)
 
 ## 3.23 (2017-03-15)
 

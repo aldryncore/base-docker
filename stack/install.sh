@@ -53,12 +53,7 @@ python ${BASEDIR}/get-pipsi.py
 #    default if pipsi was installed with python3). If pip-tools were installed
 #    in python2 while using it in python3, some wheel packages would not be
 #    recognized on pypi and our wheels proxy.
-pipsi install https://github.com/aldryncore/pip-tools/archive/1.5.0.1.tar.gz#egg=pip-tools==1.5.0.1
-
-# pip 8.1.2 has made internal changes that break pip-tools < 1.7
-# since pip-tools > 1.7 is not released yet we're freezing pip to 8.1.1
-# https://github.com/nvie/pip-tools/issues/358
-/root/.local/venvs/pip-tools/bin/pip install pip==8.1.1
+pipsi install https://github.com/aldryncore/pip-tools/archive/1.9.0.1.tar.gz#egg=pip-tools==1.9.0.1
 
 # pip-reqs: requirements evaluator and client for the wheels proxy remote
 # requirements compilation/resolution API
@@ -72,7 +67,7 @@ pipsi install start==0.2
 # ENTRYPOINT ["/tini", "--"]
 # in the Dockerfile to make it the default method for starting processes.
 # https://github.com/krallin/tini
-curl -L --show-error --retry 5 -o /tini https://github.com/krallin/tini/releases/download/v0.9.0/tini
+curl -L --show-error --retry 5 -o /tini https://github.com/krallin/tini/releases/download/v0.14.0/tini
 chmod +x /tini
 
 # install forego (a foreman clone in go)
