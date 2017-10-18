@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.25 (2017-10-18)
+
+* Upgrade to python 3.6.3 / 2.7.14
+* Upgrade system libraries
+
 ## 3.24 (2017-05-18)
 
 * Upgrade to python 3.6
