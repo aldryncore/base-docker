@@ -26,12 +26,10 @@ libjpeg62
 libmagickcore-dev
 libmagickwand-dev
 libmcrypt-dev
-libmysqlclient-dev
 libncurses5-dev
 libpcre3
 libpcre3-dev
-libpng12-0
-libpng12-dev
+libpng-dev
 libpq-dev
 libproj-dev
 libreadline-dev
@@ -41,7 +39,6 @@ libxml2-dev
 libxslt-dev
 libyaml-dev
 mercurial
-mysql-client
 netcat-openbsd
 openssh-client
 openssh-server
