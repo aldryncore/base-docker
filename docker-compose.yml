@@ -1,0 +1,17 @@
+version: "2"
+services:
+  py3:
+    build:
+      context: .
+      dockerfile: Dockerfile.py3
+    image: aldryn/base-experimental:py3-latest-slim-stretch
+    volumes:
+      - "./stack:/stack"
+
+  py2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: aldryn/base-experimental:py2-latest-slim-stretch
+    volumes:
+      - "./stack:/stack"

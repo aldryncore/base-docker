@@ -1,0 +1,2 @@
+# All dependencies needed to build wheels for python packages.
+gcc

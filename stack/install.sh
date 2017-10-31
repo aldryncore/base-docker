@@ -10,18 +10,26 @@ PYTHON_MAJOR_VERSION=$(python -c 'import platform; print(platform.python_version
 SCRIPT=$(readlink -f "$0")
 BASEDIR=$(dirname "$SCRIPT")
 
-#
-# SYSTEM PACKAGES
-#
-# Add postgres repo
-echo 'deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main' >/etc/apt/sources.list.d/pgdg.list
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+# Debian slim has some issue with some packages that try to install
+# manpages into directories that don't exist (e.g postgresql-client).
+# So we create those dirs here.
+# https://github.com/debuerreotype/debuerreotype/issues/10
+# Rumors have it that this will be fixed in the next debian version (buster).
+mkdir -p /usr/share/man/man1/
+mkdir -p /usr/share/man/man7/
+
 
 # Update package listings
 apt-get update
+apt-get install -y wget curl
 
+#
+# SYSTEM PACKAGES
+#
 # Install packages
-xargs apt-get install -y --force-yes --no-install-recommends < ${BASEDIR}/packages.txt
+# xargs apt-get install -y --no-install-recommends < ${BASEDIR}/packages.txt
+# The sed command removes comments and empty lines from the packages file.
+cat ${BASEDIR}/packages.min.txt | sed '/^#/ d' | sed '/^$/d' | xargs apt-get install -y --no-install-recommends
 
 
 if [ $PYTHON_MAJOR_VERSION -eq 3 ]
@@ -53,7 +61,7 @@ python ${BASEDIR}/get-pipsi.py
 #    default if pipsi was installed with python3). If pip-tools were installed
 #    in python2 while using it in python3, some wheel packages would not be
 #    recognized on pypi and our wheels proxy.
-pipsi install https://github.com/aldryncore/pip-tools/archive/1.9.0.1.tar.gz#egg=pip-tools==1.9.0.1
+# pipsi install https://github.com/aldryncore/pip-tools/archive/1.9.0.1.tar.gz#egg=pip-tools==1.9.0.1
 
 # pip-reqs: requirements evaluator and client for the wheels proxy remote
 # requirements compilation/resolution API
@@ -67,19 +75,8 @@ pipsi install start==0.2
 # ENTRYPOINT ["/tini", "--"]
 # in the Dockerfile to make it the default method for starting processes.
 # https://github.com/krallin/tini
-curl -L --show-error --retry 5 -o /tini https://github.com/krallin/tini/releases/download/v0.14.0/tini
+curl -L --show-error --retry 5 -o /tini https://github.com/krallin/tini/releases/download/v0.16.1/tini
 chmod +x /tini
-
-# install forego (a foreman clone in go)
-# TODO: remove once not needed anymore. Currently aldryn-django uses forego to
-#       launch pagespeed sites with separate nginx and django processes.
-curl -L --show-error --retry 5 -o /tmp/forego.deb https://bin.equinox.io/c/ekMN3bCZFUn/forego-stable-linux-amd64.deb
-dpkg -i /tmp/forego.deb
-
-# install static build of pngout
-curl -L --show-error --retry 5 http://static.jonof.id.au/dl/kenutils/pngout-20150319-linux-static.tar.gz | tar -xzC / pngout-20150319-linux-static/x86_64/pngout-static
-mv /pngout-20150319-linux-static/x86_64/pngout-static /usr/bin/pngout
-rm -rf pngout-20150319-linux-static
 
 # cleanup
 apt-get autoremove -y
